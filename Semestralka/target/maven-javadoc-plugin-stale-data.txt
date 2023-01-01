@@ -1,0 +1,44 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'16'
+-sourcepath
+'C:/Users/david/Documents/NetBeansProjects/Semestralka/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/david/Documents/NetBeansProjects/Semestralka/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Semestralka 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Semestralka 1.0-SNAPSHOT API'
+com.mycompany.semestralka
+'C:/Users/david/Documents/NetBeansProjects/Semestralka/src/main/java/com/mycompany/semestralka/Semestralka.java'
+C:\Users\david\Documents\NetBeansProjects\Semestralka\src\main\java = 1671374282725
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\allclasses-index.html = 1671382926896
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\allpackages-index.html = 1671382926898
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\element-list = 1671382926864
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\help-doc.html = 1671382926915
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\index-all.html = 1671382926910
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\index.html = 1671382926912
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\jquery-ui.overrides.css = 1671382926946
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\member-search-index.js = 1671382926903
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\module-search-index.js = 1671382926899
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\overview-tree.html = 1671382926887
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\package-search-index.js = 1671382926901
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\script.js = 1671382926920
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\search.js = 1671382926922
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\stylesheet.css = 1671382926918
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\tag-search-index.js = 1671382926904
+C:\Users\david\Documents\NetBeansProjects\Semestralka\target\site\apidocs\type-search-index.js = 1671382926902
