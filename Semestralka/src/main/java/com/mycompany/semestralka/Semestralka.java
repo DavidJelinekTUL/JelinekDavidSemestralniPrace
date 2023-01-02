@@ -30,36 +30,42 @@ public class Semestralka {
      */
     static Christmas ch = new Christmas();
 
-    public static void main(String[] args) {
+    public static void printMenu() {
         System.out.println("%-------------------------------------%");
         System.out.println("       Co si přejete spustit?");
         System.out.println("    Zadejte 1 pro Vánoční úlohy");
         System.out.println("Zadejte 2 pro Semestrální práci č.26)");
         System.out.println("%-------------------------------------%");
-        
-        if (isNumber(sc.nextLine()) == 1) {
-            ch.summonMenu();
-        } else {
-            int size = 2;
-            while (size > 1) {
+    }
+
+    public static void main(String[] args) {
+        int size = 2;
+        while (size > 0) {
+            printMenu();
+            if (isNumberMenu(sc.nextLine()) == 1) {
+                ch.summonMenu();
+            } else if(isNumberMenu(sc.nextLine()) == 2) {
                 //INPUT
                 System.out.println("Zadej rozmer matice: ");
                 size = isNumberMenu(sc.nextLine());
                 if (size < 1) {
                     break;
                 }
-                //Calculate
-                //Vstup od uživatele
-                //isMagic(size, testerFalse(size)); //Vzorový špatný vstup  TEST
-                //isMagic(size, testerTrue(size));  //Vzorový správný vstup TEST
+                int[][] list = fill(size);
+                //int[][] list = testerFalse(size);  //Vzorový špatný vstup  TEST
+                //int[][] list = testerTrue(size);   //Vzorový správný vstup TEST
+                isMagic(list);
+
                 //OUTPUT
-                if (result(size, fill(size))) {
+                prnitMatrix(list);
+                if (result(list)) {
                     System.out.println("Jedná se o magický čtverec");
                 } else {
                     System.out.println("Nejedná se o magický čtverec");
                 }
             }
         }
+
     }
 
     /**
@@ -126,7 +132,7 @@ public class Semestralka {
             }
             System.out.println(" ");
         }
-        isMagic(size, list);
+
         return list;
     }
 
@@ -147,8 +153,8 @@ public class Semestralka {
             return Integer.parseInt(input);
         }
     }
-    
-    public static int isNumberMenu(String input) { 
+
+    public static int isNumberMenu(String input) {
         if (!input.matches("[1-9]+")) {
             if (!input.matches("T(-?[0-9]+)")) {
                 System.exit(0);
@@ -169,9 +175,9 @@ public class Semestralka {
      * @param size
      * @param list
      */
-    static public void isMagic(int size, int[][] list) {
+    static public void isMagic(int[][] list) {
         int temp = 0;
-
+        int size = list.length;
         //Top to down
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -205,6 +211,10 @@ public class Semestralka {
          * Metoda poté vypíše celou matici, aby uživatel věděl, s jakými
          * hodnotami pracoval.
          */
+
+    }
+
+    public static void prnitMatrix(int[][] list) {
         System.out.println("Print: ");
         for (int i = 0; i < list.length; i++) {
             for (int j = 0; j < list.length; j++) {
@@ -227,29 +237,41 @@ public class Semestralka {
      * @param list
      * @return
      */
-    static boolean result(int size, int list[][]) {
-        int[] sort = new int[(size * size)];
-        int index = 0;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                sort[index] = list[j][i];
-                index++;
-            }
-        }
-        Arrays.sort(sort);
-        for (int i = 0; i < (Math.pow(size, 2)); i++) {
-            if (!(sort[i] == (i + 1))) {
+    static boolean result(int list[][]) {
+        int size = list.length;
+        boolean isAbsent = false;
+
+        for (int i = 0; i < ans.size() - 1; i++) {
+            if (!(ans.get(i).equals(ans.get(i + 1)))) {
+                ans.clear();
                 return false;
+
             }
-        }
-        Collections.sort(ans);
-        if (ans.get(0).equals(ans.get(ans.size() - 1))) {
-            ans.clear();
-            return true;
-        } else {
-            ans.clear();
-            return false;
         }
         
+        for (int i = 0; i < Math.pow(size, 2); i++) {
+            inner:
+            for (int j = 0; j < size; j++) {
+                for (int k = 0; k < size; k++) {
+                    if (!(list[j][k] == i+1)) {
+                        isAbsent = true;
+                    } else {
+                        isAbsent = false;
+                        break inner;
+                    }
+                }
+
+            }
+            if (isAbsent) {
+                return false;
+            }
+            isAbsent = false;
+            
+        }
+
+        
+        ans.clear();
+        return true;
+
     }
 }
